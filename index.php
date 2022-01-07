@@ -11,10 +11,10 @@ require_once 'app/Services/TelegramService.php';
 
 
 $uri = $_SERVER['REQUEST_URI'];
-echo $uri; // Outputs: URI
+echo "request uri: " . $uri; // Outputs: URI
 
 $query = $_SERVER['QUERY_STRING'];
-echo $query; // Outputs: Query String
+echo "query string: " . $query; // Outputs: Query String
 
 
 //$service = new TelegramService();
