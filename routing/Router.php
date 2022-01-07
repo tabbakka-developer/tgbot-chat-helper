@@ -34,7 +34,7 @@ class Router
     private static function routeList(): array
     {
         return [
-            'setWebhook' => TelegramService::class
+            'setwebhook' => TelegramService::class
         ];
     }
 }
