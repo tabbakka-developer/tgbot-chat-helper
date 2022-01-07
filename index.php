@@ -9,15 +9,10 @@ require_once 'app/Services/Abstracts/ServiceInterface.php';
 require_once 'app/Services/Abstracts/BaseTelegramService.php';
 require_once 'app/Services/TelegramService.php';
 
+require_once 'routing/Router.php';
 
-$uri = $_SERVER['REQUEST_URI'];
-echo "request uri: " . $uri; // Outputs: URI
+if (!Router::checkAccess()) {
+    header("HTTP/1.1 403 Forbidden");
+}
 
-$query = $_SERVER['QUERY_STRING'];
-echo "query string: " . $query; // Outputs: Query String
-
-
-//$service = new TelegramService();
-
-//var_dump($service->getMe());
-die(1);
+Router::navigate();

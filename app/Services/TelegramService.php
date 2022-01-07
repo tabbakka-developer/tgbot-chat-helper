@@ -38,6 +38,8 @@ class TelegramService extends BaseTelegramService
 
     public function setWebhook()
     {
-
+        $this->sendPostRequest($_ENV['TELGRAM_SECURE_KEY'], 'setWebhook', [
+            'url' => 'http://161.35.217.28/thisismytestbot'
+        ]);
     }
 }
