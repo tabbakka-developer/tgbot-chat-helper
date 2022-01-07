@@ -12,4 +12,5 @@ require_once 'app/Services/TelegramService.php';
 
 $service = new TelegramService();
 
-$service->getMe();
+var_dump($service->getMe());
+die(1);

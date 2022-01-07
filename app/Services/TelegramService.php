@@ -16,6 +16,8 @@ class TelegramService extends BaseTelegramService
             $data = $this->readResponse(
                 $this->sendGetRequest($_ENV['TELGRAM_SECURE_KEY'], 'getMe')
             );
+
+            return $data;
         } catch (\Exception $exception) {
             var_dump($exception);
         }
