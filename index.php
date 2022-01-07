@@ -9,10 +9,9 @@ require_once 'app/Services/Abstracts/ServiceInterface.php';
 require_once 'app/Services/Abstracts/BaseTelegramService.php';
 require_once 'app/Services/TelegramService.php';
 
-var_dump(123);
 
 
-//$service = new TelegramService();
-//
-//var_dump($service->getMe());
-//die(1);
+$service = new TelegramService();
+
+var_dump($service->getMe());
+die(1);
