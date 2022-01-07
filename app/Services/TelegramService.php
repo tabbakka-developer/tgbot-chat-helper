@@ -39,7 +39,7 @@ class TelegramService extends BaseTelegramService
     {
         try {
             $data = $this->readResponse(
-                $this->sendPostRequest($_ENV['TELGRAM_SECURE_KEY'], 'setWebhook', [
+                $this->sendGetRequest($_ENV['TELGRAM_SECURE_KEY'], 'setWebhook', [
                     'url' => 'http://161.35.217.28/thisismytestbot',
                     'ip_address' => '161.35.217.28'
                 ])
