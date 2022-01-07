@@ -13,13 +13,12 @@ class TelegramService extends BaseTelegramService
     public function getMe()
     {
         try {
-            $data = $this->readResponse(
+            return $this->readResponse(
                 $this->sendGetRequest($_ENV['TELGRAM_SECURE_KEY'], 'getMe')
             );
-
-            return $data;
         } catch (\Exception $exception) {
             var_dump($exception);
+            die(1);
         }
     }
 
@@ -38,8 +37,19 @@ class TelegramService extends BaseTelegramService
 
     public function setWebhook()
     {
-        $this->sendPostRequest($_ENV['TELGRAM_SECURE_KEY'], 'setWebhook', [
-            'url' => 'http://161.35.217.28/thisismytestbot'
-        ]);
+        try {
+            $data = $this->readResponse(
+                $this->sendPostRequest($_ENV['TELGRAM_SECURE_KEY'], 'setWebhook', [
+                    'url' => 'http://161.35.217.28/thisismytestbot',
+                    'ip_address' => '161.35.217.28'
+                ])
+            );
+
+            var_dump($data);
+            die(1);
+        } catch (\Exception $exception) {
+            var_dump($exception);
+            die(1);
+        }
     }
 }
