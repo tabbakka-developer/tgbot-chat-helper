@@ -19,7 +19,7 @@ class Router
             if (!$found && strpos($_SERVER['REQUEST_URI'], $route)) {
                 $found = true;
                 call_user_func([
-                    $class,
+                    new $class,
                     $route
                 ], []);
             }
