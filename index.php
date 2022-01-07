@@ -10,8 +10,14 @@ require_once 'app/Services/Abstracts/BaseTelegramService.php';
 require_once 'app/Services/TelegramService.php';
 
 
+$uri = $_SERVER['REQUEST_URI'];
+echo $uri; // Outputs: URI
 
-$service = new TelegramService();
+$query = $_SERVER['QUERY_STRING'];
+echo $query; // Outputs: Query String
 
-var_dump($service->getMe());
+
+//$service = new TelegramService();
+
+//var_dump($service->getMe());
 die(1);
