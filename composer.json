@@ -1,0 +1,21 @@
+{
+  "name": "vendor_name/tgbot-chat-helper",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "tabbakka",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "vlucas/phpdotenv": "^5.4",
+    "guzzlehttp/guzzle": "^7.0",
+    "ext-json": "*"
+  }
+  ,
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  }
+}
