@@ -7,18 +7,27 @@ class Router
         if (strpos($_SERVER['REQUEST_URI'], $_ENV['MY_KEY'])) {
             return true;
         }
+        echo 'access denied';
+        die(1);
         return false;
     }
 
     public static function navigate(): void
     {
+        $found = false;
         foreach (self::routeList() as $route => $class) {
-            if (strpos($route, $_SERVER['REQUEST_URI'])) {
+            if (!$found && strpos($route, $_SERVER['REQUEST_URI'])) {
+                $found = true;
                 call_user_func([
                     $class,
                     $route
                 ], []);
             }
+        }
+
+        if (!$found) {
+            echo "route not found";
+            die(1);
         }
     }
 
